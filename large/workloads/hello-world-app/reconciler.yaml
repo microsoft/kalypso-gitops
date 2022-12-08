@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: performance-test
+  namespace: dev-kaizen-app-team-hello-world-app-performance-test
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/microsoft/kalypso-app-gitops 
+    targetRevision: dev
+    path: ./performance-test
+  destination:
+    name: defualt
+    namespace: dev-kaizen-app-team-hello-world-app-performance-test

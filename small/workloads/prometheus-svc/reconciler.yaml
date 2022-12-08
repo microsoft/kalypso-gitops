@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: monitoring
+  namespace: dev-platform-team-prometheus-svc-monitoring
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/microsoft/kalypso-svc-gitops 
+    targetRevision: dev
+    path: ./prometheus
+  destination:
+    name: defualt
+    namespace: dev-platform-team-prometheus-svc-monitoring

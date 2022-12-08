@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-platform-team-prometheus-svc-monitoring
+  labels:
+    environment: dev
+    workspace: platform-team
+    workload: prometheus-svc
+    deploymentTarget: monitoring    

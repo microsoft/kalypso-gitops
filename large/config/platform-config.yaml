@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: plarform-config
+  namespace: dev
+data:
+  ENVIRONMENT: Dev
+  REGION: West US
+  DATABASE_URL: mysql://west:8806/mysql
+  CLUSTER_NAME: Large

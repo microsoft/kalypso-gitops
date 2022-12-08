@@ -1,0 +1,20 @@
+apiVersion: clusterconfig.azure.com/v1alpha1 
+kind: FluxConfig 
+metadata: 
+  name: monitoring
+  namespace: dev-platform-team-prometheus-svc-monitoring
+spec: 
+  scope: namespace 
+  sourceKind: GitRepository 
+  gitRepository: 
+    url: https://github.com/microsoft/kalypso-svc-gitops
+    timeout: 10m 
+    syncInterval: 10m 
+    repositoryRef: 
+      branch: dev 
+  kustomizations: 
+    - name: manifests 
+      path: ./prometheus 
+      timeout: 10m 
+      syncInterval: 10 
+      prune: true 
