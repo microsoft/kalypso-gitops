@@ -1,14 +1,10 @@
-# Project
+# Kalypso GitOps
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+The Platform GitOps repository contains the processed manifests that will be pulled to the K8s clusters by a corresponding reconciler.  These are the manifests that have been processed through the promotional flow the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. It contains the same rollout environment branches as the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. 
 
-As the maintainer of this project, please make a few updates:
+The cluster types, included in the environments are represented with folders. Each folder contains subfolders corresponding to the workloads scheduled on this cluster type. 
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Manual updates are not made to this repository, rather changes are automated as part of the CI/CD pipeline. 
 
 ## Contributing
 
