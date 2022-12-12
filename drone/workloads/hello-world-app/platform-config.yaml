@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: plarform-config
-  namespace: dev
+  namespace: dev-kaizen-app-team-hello-world-app-functional-test
 data:
   ENVIRONMENT: Dev
   REGION: East US
