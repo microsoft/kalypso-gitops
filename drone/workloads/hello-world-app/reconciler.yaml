@@ -12,12 +12,12 @@ spec:
     httpsUser: ZWVkb3Jlbmtv
     url: https://github.com/microsoft/kalypso-app-gitops
     timeout: 10m 
-    syncInterval: 10m 
+    syncInterval: 1m0s 
     ref: 
       branch: dev 
   kustomizations: 
     - name: manifests 
       path: ./functional-test 
       timeout: 10m 
-      syncInterval: 10 
+      syncInterval: 1m0s 
       prune: true 
