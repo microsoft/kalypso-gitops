@@ -6,11 +6,14 @@ metadata:
 spec: 
   scope: namespace 
   sourceKind: GitRepository 
+  protectedParametersSecretRef:
+    name: cluster-config-dev-protected-parameters
   gitRepository: 
+    httpsUser: ZWVkb3Jlbmtv
     url: https://github.com/microsoft/kalypso-app-gitops
     timeout: 10m 
     syncInterval: 10m 
-    repositoryRef: 
+    ref: 
       branch: dev 
   kustomizations: 
     - name: manifests 
