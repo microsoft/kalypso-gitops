@@ -6,6 +6,9 @@ metadata:
 spec: 
   scope: namespace 
   sourceKind: GitRepository 
+  correlationId: ""
+  operationId: ""
+  softDelete: false
   protectedParametersSecretRef:
     name: cluster-config-dev-protected-parameters
   gitRepository: 
