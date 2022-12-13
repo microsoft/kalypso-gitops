@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: functional-test
-  namespace: dev-kaizen-app-team-hello-world-app-functional-test
+  name: dev-kaizen-app-team-hello-world-app-functional-test
+  namespace: flux-system
 spec:
   interval: 1m0s
   url: https://github.com/microsoft/kalypso-app-gitops
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: functional-test
-  namespace: dev-kaizen-app-team-hello-world-app-functional-test
+  name: dev-kaizen-app-team-hello-world-app-functional-test
+  namespace: flux-system
 spec:
   interval: 1m0s
   targetNamespace: dev-kaizen-app-team-hello-world-app-functional-test
   sourceRef:
     kind: GitRepository
-    name: functional-test
+    name: dev-kaizen-app-team-hello-world-app-functional-test
   path: ./functional-test 
   prune: true
