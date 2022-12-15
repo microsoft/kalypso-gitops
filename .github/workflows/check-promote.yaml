@@ -13,20 +13,20 @@ jobs:
       uses: actions/checkout@v3
     - name: Get Promoted Label
       run: |
-        pr=$(gh pr list --search $COMMIT_ID --state merged --label promoted)
-        echo $pr
+        promoted=$(gh pr list --search $COMMIT_ID --state merged --label promoted)
+        if [[ ! -z "$promoted" ]]; then
+          PROMOTED_COMMIT_ID=$(cat .github/tracking/Promoted_Commit_Id)
+          echo "::set-output name=promoted_commit_id::$PROMOTED_COMMIT_ID"
+          echo $PROMOTED_COMMIT_ID
+        fi         
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_ID: ${{ github.sha }}
 
-    - name: Wait for deployment to complete   
-      run: |
-          echo "Waiting..."
-
-  # promote:
-  #   needs: check
-  #   uses: ./.github/workflows/transform.yaml
-  #   with:
-  #     promoted_commit_id: ${{ inputs.promoted_commit_id }}
-  #     environment: ${{ inputs.promote_environment }}
+  promote:
+    needs: check
+    uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
+    with:
+      promoted_commit_id: ${{ needs.check.outputs.promoted_commit_id }}
+      environment: ${{ github.ref_name }}
 
