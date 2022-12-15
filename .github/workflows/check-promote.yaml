@@ -25,11 +25,16 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_ID: ${{ github.sha }}
+    - name: Check and Promote
+      run: |
+          gh workflow run check-promote.yaml -f environment=$GITHUB_REF_NAME -f promoted_commit_id=$PROMOTED_COMMIT_ID -R microsoft/kalypso-control-plane       
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  checkpromote:
-    needs: get_promoted_commit_id
-    uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
-    with:
-      promoted_commit_id: ${{ needs.get_promoted_commit_id.outputs.promoted_commit_id }}
-      environment: ${{ github.ref_name }}      
+  # checkpromote:
+  #   needs: get_promoted_commit_id
+  #   uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
+  #   with:
+  #     promoted_commit_id: ${{ needs.get_promoted_commit_id.outputs.promoted_commit_id }}
+  #     environment: ${{ github.ref_name }}      
 
