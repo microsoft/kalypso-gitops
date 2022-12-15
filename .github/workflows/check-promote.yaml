@@ -3,10 +3,13 @@ name: checkpromote
 on:
   push:
     branches:
-      - dev
+      - '*'
+      - '!main'
+    paths-ignore:
+      - '.github/**'      
 
 jobs:
-  check:
+  get_promoted_commit_id:
     runs-on: ubuntu-latest    
     steps: 
     - name: Checkout Gitops
@@ -23,10 +26,10 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_ID: ${{ github.sha }}
 
-  promote:
-    needs: check
+  checkpromote:
+    needs: get_promoted_commit_id
     uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
     with:
-      promoted_commit_id: ${{ needs.check.outputs.promoted_commit_id }}
+      promoted_commit_id: ${{ needs.get_promoted_commit_id.outputs.promoted_commit_id }}
       environment: ${{ github.ref_name }}      
 
