@@ -27,7 +27,7 @@ jobs:
         COMMIT_ID: ${{ github.sha }}
     - name: Check and Promote
       run: |
-          gh workflow run check-promote.yaml -f environment=$GITHUB_REF_NAME -f promoted_commit_id=$PROMOTED_COMMIT_ID -R microsoft/kalypso-control-plane       
+          gh workflow run check-promote.yaml -f environment=$GITHUB_REF_NAME -f promoted_commit_id=$PROMOTED_COMMIT_ID -r main -R microsoft/kalypso-control-plane       
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
