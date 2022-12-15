@@ -8,7 +8,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    evironment: ${{ inputs.environment }} 
+    environment: ${{ inputs.environment }} 
     steps: 
     - name: Get Promoted Label
       run: |
