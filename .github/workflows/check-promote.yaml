@@ -11,10 +11,11 @@ jobs:
     steps: 
     - name: Get Promoted Label
       run: |
-        pr=$(gh pr list --search "<SHA>" --state merged --label promoted)
+        pr=$(gh pr list --search "$COMMIT_ID" --state merged --label promoted)
         echo $pr
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COMMIT_ID: ${{ github.sha }}
 
     - name: Wait for deployment to complete   
       run: |
