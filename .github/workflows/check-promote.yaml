@@ -28,5 +28,5 @@ jobs:
     uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
     with:
       promoted_commit_id: ${{ needs.check.outputs.promoted_commit_id }}
-      environment: ${{ github.ref_name }}
+      environment: ${{ github.ref_name }}      
 
