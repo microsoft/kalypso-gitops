@@ -5,8 +5,8 @@ on:
     branches:
       - '*'
       - '!main'
-    paths-ignore:
-      - '.github/**'      
+    # paths-ignore:
+    #   - '.github/**'      
 
 jobs:
   get_promoted_commit_id:
