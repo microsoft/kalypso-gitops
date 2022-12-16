@@ -1,1 +1,1 @@
-Manifests are generated for 060939a82619ffdd90c4bea66852859f9bd07e14 commit
+Manifests are generated for dd878fa2217dfde0501e2cc7932f8273091c7ec4 commit
