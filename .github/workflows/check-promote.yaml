@@ -19,7 +19,7 @@ jobs:
         promoted=$(gh pr list --search $COMMIT_ID --state merged --label promoted)
         if [[ ! -z "$promoted" ]]; then
           PROMOTED_COMMIT_ID=$(cat .github/tracking/Promoted_Commit_Id)
-          # echo "::set-output name=promoted_commit_id::$PROMOTED_COMMIT_ID"
+          echo "PROMOTED_COMMIT_ID=$PROMOTED_COMMIT_ID" >> $GITHUB_ENV
           echo $PROMOTED_COMMIT_ID
         fi         
       env:
