@@ -1,26 +1,31 @@
+before something
+something
+main/workloads/hello-world-app.yaml
+main/templates/arc-flux-reconciler.yaml
+/home/runner/work/kalypso-control-plane/kalypso-control-plane
+https://github.com/microsoft/kalypso-app-src
+-kaizen-app-team-hello-world-app-
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev-kaizen-app-team-hello-world-app-functional-test
+  name: 
   namespace: flux-system
 spec:
   interval: 1m0s
-  url: https://github.com/microsoft/kalypso-app-gitops
+  url: 
   ref:
-    branch: dev
-  secretRef:
-    name: hello-world-repo-secret
+    branch: 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev-kaizen-app-team-hello-world-app-functional-test
+  name: 
   namespace: flux-system
 spec:
   interval: 1m0s
-  targetNamespace: dev-kaizen-app-team-hello-world-app-functional-test
+  targetNamespace: -kaizen-app-team-hello-world-app-
   sourceRef:
     kind: GitRepository
-    name: dev-kaizen-app-team-hello-world-app-functional-test
-  path: ./functional-test 
+    name: 
+  path:  
   prune: true
