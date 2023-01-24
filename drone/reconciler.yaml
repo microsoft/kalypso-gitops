@@ -11,4 +11,4 @@ spec:
   source:
     path: ./functional-test
     repoURL: https://github.com/microsoft/kalypso-app-gitops
-    targetRevision: dev"
+    targetRevision: dev
