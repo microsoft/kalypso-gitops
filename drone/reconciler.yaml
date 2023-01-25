@@ -1,0 +1,25 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: hello-world-app-functional-test
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: dev
+  secretRef:
+    name: repo-secret
+  url: https://github.com/microsoft/kalypso-app-gitops
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: hello-world-app-functional-test
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./functional-test
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: hello-world-app-functional-test
+  targetNamespace: dev-kaizen-app-team-hello-world-app-functional-test
