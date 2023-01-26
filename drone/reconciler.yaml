@@ -4,7 +4,7 @@ metadata:
   name: hello-world-app-functional-test
   namespace: flux-system
 spec:
-  interval: 1m30s
+  interval: 2m0s
   ref:
     branch: dev
   secretRef:
