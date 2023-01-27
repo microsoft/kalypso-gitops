@@ -4,6 +4,7 @@ data:
   DATABASE_URL: mysql://restricted-host:3306/mysql988
   ENVIRONMENT: Dev
   REGION: East US
+  SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
 kind: ConfigMap
 metadata:
   name: platform-config
