@@ -1,11 +1,11 @@
 apiVersion: v1
 data:
-  CLUSTER_NAME: Drone
+  CLUSTER_NAME: Large
   DATABASE_URL: mysql://restricted-host:3306/mysqlrty688989
   ENVIRONMENT: Dev
-  REGION: East US
+  REGION: West US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: dev-kaizen-app-team-functional-test
+  namespace: dev-kaizen-app-team-performance-test
