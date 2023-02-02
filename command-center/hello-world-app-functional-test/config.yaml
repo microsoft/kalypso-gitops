@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   CLUSTER_NAME: Command Center
-  DATABASE_URL: mysql://restricted-host:3306/mysqlrty6999ahklakdnakls
+  DATABASE_URL: mysql://restricted-host:3306/mysqlrty9990000
   ENVIRONMENT: Dev
   REGION: East US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
