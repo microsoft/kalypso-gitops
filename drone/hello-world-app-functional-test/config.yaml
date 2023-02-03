@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   CLUSTER_NAME: Drone
-  DATABASE_URL: mysql://restricted-host:3306/mysqlrty999000078698gfghfgfgsdf
+  DATABASE_URL: mysql://restricted-host:3306/mysqlrty999000078698gfghfgfgsdfwe
   ENVIRONMENT: Dev
   REGION: East US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
