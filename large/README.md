@@ -1,1 +1,0 @@
-This folder contains deployment targets scheduled on the cluster type
