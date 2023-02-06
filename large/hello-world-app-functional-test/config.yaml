@@ -1,9 +1,9 @@
 apiVersion: v1
 data:
-  CLUSTER_NAME: Drone
-  DATABASE_URL: mysql://restricted-host:3306/mysqlrty123
+  CLUSTER_NAME: Large
+  DATABASE_URL: mysql://west:8806/mysql2
   ENVIRONMENT: Dev
-  REGION: East US
+  REGION: West US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
 kind: ConfigMap
 metadata:
