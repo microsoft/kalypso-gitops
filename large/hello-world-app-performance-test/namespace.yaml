@@ -4,6 +4,7 @@ metadata:
   labels:
     deploymentTarget: hello-world-app-performance-test
     environment: dev
+    someLabel: some-value
     workload: hello-world-app
     workspace: kaizen-app-team
   name: dev-kaizen-app-team-hello-world-app-performance-test
