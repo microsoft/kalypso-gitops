@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world-app-performance-test
+  namespace: argocd
+spec:
+  destination:
+    namespace: dev-kaizen-app-team-hello-world-app-performance-test
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      exclude: kustomization.yaml
+      include: '*.yaml'
+      recurse: true
+    path: ./performance-test
+    repoURL: https://github.com/microsoft/kalypso-app-gitops
+    targetRevision: dev
+  syncPolicy:
+    automated:
+      allowEmpty: false
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
