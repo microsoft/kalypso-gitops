@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: observability-prometheus
+  namespace: argocd
+spec:
+  destination:
+    namespace: dev-platform-team-observability-prometheus
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      exclude: kustomization.yaml
+      include: '*.yaml'
+      recurse: true
+    path: ./prometheus
+    repoURL: https://github.com/microsoft/kalypso-svc-gitops
+    targetRevision: dev
+  syncPolicy:
+    automated:
+      allowEmpty: false
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
