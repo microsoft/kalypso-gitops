@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: hello-world-app-functional-test
-  namespace: flux-system
+  namespace: flux-system42134234231421
 spec:
   interval: 30s
   ref:
