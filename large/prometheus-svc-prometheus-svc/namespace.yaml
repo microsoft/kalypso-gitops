@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    deploymentTarget: prometheus-svc-prometheus-svc
+    environment: dev
+    someLabel: some-value
+    workload: prometheus-svc
+    workspace: platform-team
+  name: dev-platform-team-prometheus-svc-prometheus-svc
