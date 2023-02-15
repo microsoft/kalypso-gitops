@@ -30,11 +30,3 @@ jobs:
           gh workflow run check-promote.yaml -f environment=$GITHUB_REF_NAME -f promoted_commit_id=$PROMOTED_COMMIT_ID -f commit_id=$GITHUB_SHA -r main -R microsoft/kalypso-control-plane       
       env:
         GH_TOKEN: ${{ secrets.CONTROL_PLANE_TOKEN }}
-
-  # checkpromote:
-  #   needs: get_promoted_commit_id
-  #   uses: microsoft/kalypso-control-plane/.github/workflows/check-promote.yaml@main
-  #   with:
-  #     promoted_commit_id: ${{ needs.get_promoted_commit_id.outputs.promoted_commit_id }}
-  #     environment: ${{ github.ref_name }}      
-
