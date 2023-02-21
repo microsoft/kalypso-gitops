@@ -1,10 +1,10 @@
 # Kalypso GitOps
 
-The Platform GitOps repository contains the processed manifests that will be pulled to the K8s clusters by a corresponding reconciler.  These are the manifests that have been processed through the promotional flow the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. It contains the same rollout environment branches as the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. 
+[Kalypso](https://github.com/microsoft/kalypso) Platform GitOps repository contains processed manifests that are pulled to the K8s clusters by GitOps reconcilers. These manifests have been processed through the promotional flow in the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. This repository contains the same rollout environment branches as the [Control Plane](https://github.com/microsoft/kalypso-control-plane) repository. 
 
 The cluster types, included in the environments are represented with folders. Each folder contains subfolders corresponding to the workloads scheduled on this cluster type. 
 
-Manual updates are not made to this repository, rather changes are automated as part of the CI/CD pipeline. 
+Manual updates are not made to this repository.
 
 ## Contributing
 
