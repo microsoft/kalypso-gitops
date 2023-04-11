@@ -4,22 +4,22 @@ metadata:
   name: observability-prometheus
   namespace: argocd
 spec:
-  destination:
-    namespace: dev-platform-team-observability-prometheus
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    directory:
-      exclude: kustomization.yaml
-      include: '*.yaml'
-      recurse: true
-    path: ./prometheus
-    repoURL: https://github.com/microsoft/kalypso-svc-gitops
-    targetRevision: dev
-  syncPolicy:
-    automated:
-      allowEmpty: false
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+    destination:
+        namespace: dev-platform-team-observability-prometheus
+        server: https://kubernetes.default.svc              
+    project: default
+    source:
+        path: ./prometheus
+        repoURL: https://github.com/eedorenko/kalypso-oci-svc-gitops
+        targetRevision: dev
+        directory:
+            recurse: true
+            include: '*.yaml'
+            exclude: 'kustomization.yaml'
+    syncPolicy:
+        automated:
+            prune: true
+            selfHeal: true
+            allowEmpty: false
+        syncOptions:
+        - CreateNamespace=true

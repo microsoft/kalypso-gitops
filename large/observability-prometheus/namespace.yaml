@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: dev-platform-team-observability-prometheus 
   labels:
-    deploymentTarget: observability-prometheus
     environment: dev
-    someLabel: some-value
-    workload: observability
     workspace: platform-team
-  name: dev-platform-team-observability-prometheus
+    workload: observability
+    deploymentTarget: observability-prometheus
+    someLabel: some-value
