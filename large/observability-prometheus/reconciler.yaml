@@ -1,25 +1,26 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
 metadata:
-  name: observability-prometheus
-  namespace: argocd
+  name: "observability-prometheus"
+  namespace: flux-system
 spec:
-  destination:
-    namespace: dev-platform-team-observability-prometheus
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    directory:
-      exclude: kustomization.yaml
-      include: '*.yaml'
-      recurse: true
-    path: ./prometheus
-    repoURL: https://github.com/microsoft/kalypso-svc-gitops
-    targetRevision: dev
-  syncPolicy:
-    automated:
-      allowEmpty: false
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+  interval: 15s
+  url: "https://github.com/eedorenko/kalypso-tut-test-svc-gitops"
+  ref:
+    branch: "dev"
+  secretRef:
+      name: repo-secret    
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: "observability-prometheus"
+  namespace: flux-system
+spec:
+  interval: 30s
+  targetNamespace: "dev-large-observability-prometheus"
+  sourceRef:
+    kind: GitRepository
+    name: "observability-prometheus"
+  path: "./prometheus" 
+  prune: true
