@@ -4,8 +4,8 @@ metadata:
   name: "observability-prometheus"
   namespace: flux-system
 spec:
-  interval: 15s
-  url: "https://github.com/eedorenko/kalypso-tut-test-svc-gitops"
+  interval: 30s
+  url: "https://github.com/eedorenko/kalypso-svc-gitops"
   ref:
     branch: "dev"
   secretRef:
